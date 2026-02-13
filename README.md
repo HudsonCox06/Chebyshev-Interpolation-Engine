@@ -1,63 +1,45 @@
 # Chebyshev Interpolation Engine (Java)
 
-## Overview
+This project implements polynomial interpolation using Chebyshev nodes. The goal is to reduce oscillation near the endpoints of an interval and analyze interpolation error both numerically and visually.
 
-This project implements polynomial interpolation using **Chebyshev nodes** to reduce oscillation and minimize interpolation error (Runge phenomenon).  
+The program generates Chebyshev-distributed nodes over a chosen interval, constructs the interpolating polynomial, evaluates approximation error across a dense sampling grid, and displays the results using JFreeChart.
 
-The program generates Chebyshev-distributed nodes over a specified interval, constructs interpolating polynomials of varying degrees, computes approximation error, and visualizes results using **JFreeChart**.
+## Why Chebyshev Nodes?
 
----
+Polynomial interpolation with equally spaced nodes can produce large oscillations near the interval endpoints (Runge phenomenon).
 
-## Motivation
+Chebyshev nodes cluster near the boundaries of the interval, which helps reduce maximum interpolation error and improves numerical stability. This project demonstrates that behavior through printed error values and graphical output.
 
-Polynomial interpolation using equally spaced nodes can lead to large oscillations near interval endpoints.  
+## What the Program Does
 
-Chebyshev nodes cluster near the boundaries of the interval, which improves numerical stability and reduces maximum interpolation error.  
-
-This project explores that behavior through both quantitative error analysis and graphical comparison.
-
----
-
-## Features
-
-- Chebyshev node generation over interval [a, b]
-- Polynomial interpolation for configurable degree
-- Dense-grid error evaluation
-- Maximum error reporting
-- Graphical visualization of:
-  - Original function
-  - Interpolating polynomial(s)
-  - Error comparison
-
----
+- Generates Chebyshev nodes on a specified interval  
+- Evaluates a target function at those nodes  
+- Constructs the interpolating polynomial  
+- Computes maximum interpolation error across the interval  
+- Plots the original function and the interpolating polynomial  
+- Displays error values in the terminal  
 
 ## Example Output
 
-### Interpolation Visualization
-![Interpolation Graph](docs/Sample\ Program\ Graph\ Output.png)
+### Interpolation Graph
+![Interpolation Graph](docs/interpolation-graph.png)
 
+### Error Graph
+![Error Graph](docs/error-graph.png)
 
----
-
-## How It Works
-
-1. Generate Chebyshev nodes using the cosine distribution formula.
-2. Evaluate the target function at each node.
-3. Construct the interpolating polynomial.
-4. Evaluate error across a dense sampling grid.
-5. Plot the function and approximation using JFreeChart.
-
----
+### Console Output
+![Console Output](docs/console-output.png)
 
 ## Compile & Run
 
-### Mac / Linux
-```bash
+Mac / Linux:
 javac -cp ".:lib/jfreechart-1.5.6.jar" ChebyshevEngine.java
 java -cp ".:lib/jfreechart-1.5.6.jar" ChebyshevEngine
 
-### Windows
-```bash
+Windows:
 javac -cp ".;lib/jfreechart-1.5.6.jar" ChebyshevEngine.java
 java -cp ".;lib/jfreechart-1.5.6.jar" ChebyshevEngine
 
+## Notes
+
+This project was developed as part of a numerical methods assignment focused on interpolation techniques, error analysis, and visualization of numerical behavior.
