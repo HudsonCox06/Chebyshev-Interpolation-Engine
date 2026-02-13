@@ -22,13 +22,8 @@ Chebyshev nodes cluster near the boundaries of the interval, which helps reduce 
 ## Example Output
 
 ### Interpolation Graph
-![Interpolation Graph](docs/interpolation-graph.png)
+![Interpolation Graph](docs/Sample\ Program\ Graph\ Output.png)
 
-### Error Graph
-![Error Graph](docs/error-graph.png)
-
-### Console Output
-![Console Output](docs/console-output.png)
 
 ## Compile & Run
 
